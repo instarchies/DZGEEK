@@ -1,114 +1,70 @@
-﻿//Илья Бутенко
-//Задание 1 
-Console.WriteLine("Task 1.");
-int a1 = 5;
-int b1 = 7;
-int a2 = 2;
-int b2 = 10;
-int a3 = -9;
-int b3 = -3;
-if (a1 < b1)
+﻿int Degree(int a, int b)
 {
-    Console.WriteLine($"1. a1 = {a1}, b1 = {b1}");
-    Console.WriteLine($"Min = a1({a1})");
-    Console.WriteLine($"Max = b1({b1})");
-
-}
-else
-{
-    Console.WriteLine($"1. a1 = {a1}, b1 = {b1}");
-    Console.WriteLine($"Min = b1({b1})");
-    Console.WriteLine($"Max = a1({a1})");
-}
-if (a2 < b2)
-{
-    Console.WriteLine($"2. a2 = {a2}, b2 = {b2}");
-    Console.WriteLine($"Min = a2({a2})");
-    Console.WriteLine($"Max = b2({b2})");
-
-}
-else
-{
-    Console.WriteLine($"2. a2 = {a2}, b2 = {b2}");
-    Console.WriteLine($"Min = b2({b2})");
-    Console.WriteLine($"Max = a2({a2})");
-}
-if (a3 < b3)
-{
-    Console.WriteLine($"3. a3 = {a3}, b3 = {b3}");
-    Console.WriteLine($"Min = a3({a3})");
-    Console.WriteLine($"Max = b3({b3})");
-
-}
-else
-{
-    Console.WriteLine($"3. a3 = {a3}, b3 = {b3}");
-    Console.WriteLine($"Min = b3({b3})");
-    Console.WriteLine($"Max = a3({a3})");
-}
-Console.WriteLine();
-
-//Задание 2
-
-Console.WriteLine("Task 2.");
-int[] numbers = { 2, 3, 7 };
-for (int i = 0; i < 3; i++)
-{
-    Console.WriteLine("There are numbers: " + numbers[i]);
-}
-Console.WriteLine("Max: " + numbers.Max());
-Console.WriteLine();
-
-//Задание 3
-
-Console.WriteLine("Task 3");
-int a = 4;
-int b = -3;
-int c = 7;
-if (a % 2 == 0)
-{
-    Console.WriteLine("Число а - четное");
-}
-else
-{
-    Console.WriteLine("Число а - нечетное");
-}
-if (b % 2 == 0)
-{
-    Console.WriteLine("Число b - четное");
-}
-else
-{
-    Console.WriteLine("Число b - нечетное");
-}
-if (c % 2 == 0)
-{
-    Console.WriteLine("Число c - четное");
-}
-else
-{
-    Console.WriteLine("Число c - нечетное");
-}
-Console.WriteLine();
-
-//Задание 4
-
-int n1 = 5;
-Console.WriteLine($"1. There is number {n1}");
-for (int i = 1; i <= n1; i++)
-{
-    if (i % 2 == 0)
+    int result = 0;
+    for (int i = 1; i <= b; i++)
     {
-        Console.WriteLine(i);
+        if (result == 0)
+        {
+            result = a;
+        }
+        else
+        {
+            result = a * result;
+        }
+    }
+    return result;
+}
+Console.WriteLine("Введите число а, в которое хотите возвести степень b");
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Результат = {Degree(a, b)}");
+
+
+int SumOfDigits(int a)
+{
+    int[] x = new int[a.ToString().Length];
+    for (int i = 0; i < x.Length; i++)
+    {
+        x[i] = a % 10;
+        a /= 10;
+    }
+    Array.Reverse(x);
+    int result = 0;
+    for (int i = 0; i < x.Length; i++)
+    {
+        result = result + x[i];
+    }
+    return result;
+}
+Console.WriteLine("Введите число, в котором хотите найти сумму цифр");
+int number = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Результат = {SumOfDigits(number)}");
+
+void Massive(int a, int b, int c, int d, int e, int f, int g, int h)
+{
+    int[] massive = { a, b, c, d, e, f, g, h };
+    for (int i = 0; i < massive.Length; i++)
+    {
+        if (i == massive.Length - 1)
+        {
+            Console.Write($"[{massive[i]}]");
+        }
+        else
+        {
+            Console.Write($"[{massive[i]}],");
+        }
+        
     }
 
 }
-int n2 = 8;
-Console.WriteLine($"2. There is number {n2}");
-for (int i = 1; i <= n2; i++)
-{
-    if (i % 2 == 0)
-    {
-        Console.WriteLine(i);
-    }
-}
+Console.WriteLine("введите 8 чисел, чтобы вывести их массив на экран");
+int number1 = Convert.ToInt32(Console.ReadLine());
+int number2 = Convert.ToInt32(Console.ReadLine());
+int number3 = Convert.ToInt32(Console.ReadLine());
+int number4 = Convert.ToInt32(Console.ReadLine());
+int number5 = Convert.ToInt32(Console.ReadLine());
+int number6 = Convert.ToInt32(Console.ReadLine());
+int number7 = Convert.ToInt32(Console.ReadLine());
+int number8 = Convert.ToInt32(Console.ReadLine());
+
+Massive(number1, number2, number3, number4, number5, number6, number7, number8);
